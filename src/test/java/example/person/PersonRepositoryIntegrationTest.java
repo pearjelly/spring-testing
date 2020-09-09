@@ -26,11 +26,12 @@ public class PersonRepositoryIntegrationTest {
 
     @Test
     public void shouldSaveAndFetchPerson() throws Exception {
+
         Person peter = new Person("Peter", "Pan");
-        subject.save(peter);
+        subject.save(peter);//given
 
-        Optional<Person> maybePeter = subject.findByLastName("Pan");
+        Optional<Person> maybePeter = subject.findByLastName("Pan");// when
 
-        assertThat(maybePeter, is(Optional.of(peter)));
+        assertThat(maybePeter, is(Optional.of(peter)));//then
     }
 }
